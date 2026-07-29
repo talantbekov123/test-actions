@@ -1,0 +1,10 @@
+# simple.ps1
+# A basic PowerShell script example
+ 
+Write-Host "Hello, World!"
+ 
+$name = Read-Host "What's your name?"
+Write-Host "Nice to meet you, $name!"
+ 
+$date = Get-Date
+Write-Host "Today's date is: $date"
