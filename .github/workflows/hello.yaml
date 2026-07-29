@@ -1,10 +1,20 @@
-# simple.ps1
-# A basic PowerShell script example
+
+name: Hello World Workflow
  
-Write-Host "Hello, World!"
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
  
-$name = Read-Host "What's your name?"
-Write-Host "Nice to meet you, $name!"
+jobs:
+  run-script:
+    runs-on: windows-latest
  
-$date = Get-Date
-Write-Host "Today's date is: $date"
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+ 
+      - name: Run main.ps1
+        shell: pwsh
+        run: ./.github/workflows/main.ps1
+ 
